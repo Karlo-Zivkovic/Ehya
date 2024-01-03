@@ -23,5 +23,4 @@ Blogg app. Built the backend for it in node.js. And frontend is in react.
 - <b>check the .env file for the critical information for app to work properly</b>
 
 <h2>Project screenshot</h2>
-
-<img src="https://imgur.com/a/L6NnAg2" height="80%" width="80%" alt="project homepage"/>
+<img src="https://i.imgur.com/q9a6sxN.png" height="80%" width="80%" alt="project homepage"/>
