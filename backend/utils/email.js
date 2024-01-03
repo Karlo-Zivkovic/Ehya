@@ -4,7 +4,7 @@ module.exports = class Email {
   constructor(user) {
     (this.to = user.email),
       (this.firstName = user.name.split(' ')[0]),
-      (this.from = `Karlo Zivkovic <${process.env.EMAIL_FROM}>`);
+      (this.from =  process.env.EMAIL_FROM)
   }
 
   newTransport() {
