@@ -1,12 +1,9 @@
 import { useContext } from 'react';
 import {
   AiFillHeart,
-  AiFillInstagram,
-  AiFillYoutube,
   AiOutlineTwitter,
   AiOutlineWhatsApp,
 } from 'react-icons/ai';
-import { BsTelegram } from 'react-icons/bs';
 import { FaFacebook, FaReddit } from 'react-icons/fa';
 import { AppContext } from '../context/context';
 
