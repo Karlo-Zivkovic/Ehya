@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const API_BASE_URL = 'http://127.0.0.1:9003';
+export const API_BASE_URL = 'https://ehya-jglq.onrender.com';
 export const RESULTS_PER_PAGE = 4;
 
 export function formatDate(dateString: string, includeHour: boolean = false) {
