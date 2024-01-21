@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
-import { useForm, SubmitHandler } from "react-hook-form";
-import { SignupType } from "../types";
-import useSignup from "../features/auth/useSignup";
-import { BounceLoader } from "react-spinners";
+import { Link } from 'react-router-dom';
+import { useForm, SubmitHandler } from 'react-hook-form';
+import { SignupType } from '../types';
+import useSignup from '../features/auth/useSignup';
+import { BounceLoader } from 'react-spinners';
 
 function Signup() {
   const { signup, isSigningup } = useSignup();
@@ -16,7 +16,9 @@ function Signup() {
 
   return (
     <div className="flex flex-col gap-10 px-6  justify-center items-center h-screen w-full">
-      <h1 className="overflow-hidden text-center text-3xl font-semibold">Sign Up</h1>
+      <h1 className="overflow-hidden text-center text-3xl font-semibold">
+        Sign Up
+      </h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-7  w-full max-w-xl"
@@ -27,25 +29,25 @@ function Signup() {
           </label>
           <input
             className={`h-14 px-4 rounded-lg border outline-none focus:border-gray-400 ${
-              errors.name ? "border-red-500" : "border-[#c3cad9]"
+              errors.name ? 'border-red-500' : 'border-[#c3cad9]'
             }`}
             placeholder="Enter name"
             type="text"
             id="name"
-            {...register("name", {
+            {...register('name', {
               minLength: {
                 value: 1,
-                message: "Name length must be at least 1 character",
+                message: 'Name length must be at least 1 character',
               },
               required: {
                 value: true,
-                message: "Name is required",
+                message: 'Name is required',
               },
             })}
           />
           {errors.name?.message && (
             <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>
-          )}{" "}
+          )}{' '}
         </div>
         <div className="flex flex-col gap-2">
           <label className="font-semibold text-slate-600" htmlFor="email">
@@ -53,23 +55,23 @@ function Signup() {
           </label>
           <input
             className={`h-14 px-4 rounded-lg border outline-none focus:border-gray-400 ${
-              errors.email ? "border-red-500" : "border-[#c3cad9]"
+              errors.email ? 'border-red-500' : 'border-[#c3cad9]'
             }`}
             placeholder="Enter email"
             type="email"
             id="email"
-            {...register("email", {
+            {...register('email', {
               pattern: {
                 value:
                   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                message: "Enter a valid email",
+                message: 'Enter a valid email',
               },
               required: {
                 value: true,
-                message: "Email is required",
+                message: 'Email is required',
               },
             })}
-          />{" "}
+          />{' '}
           {errors.email?.message && (
             <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>
           )}
@@ -80,19 +82,19 @@ function Signup() {
           </label>
           <input
             className={`h-14 px-4 rounded-lg border outline-none focus:border-gray-400 ${
-              errors.password ? "border-red-500" : "border-[#c3cad9]"
+              errors.password ? 'border-red-500' : 'border-[#c3cad9]'
             }`}
             type="password"
             id="password"
             placeholder="Enter password"
-            {...register("password", {
+            {...register('password', {
               required: {
                 value: true,
-                message: "Password is required",
+                message: 'Password is required',
               },
               minLength: {
-                value: 6,
-                message: "Password must be at least 6 characters long",
+                value: 8,
+                message: 'Password must be at least 8 characters long',
               },
             })}
           />
@@ -111,20 +113,20 @@ function Signup() {
           </label>
           <input
             className={`h-14 px-4 rounded-lg border outline-none focus:border-gray-400 ${
-              errors.passwordConfirm ? "border-red-500" : "border-[#c3cad9]"
+              errors.passwordConfirm ? 'border-red-500' : 'border-[#c3cad9]'
             }`}
             type="password"
             id="passwordConfirm"
             placeholder="Enter confirm password"
-            {...register("passwordConfirm", {
+            {...register('passwordConfirm', {
               required: {
                 value: true,
-                message: "Confirm password is required",
+                message: 'Confirm password is required',
               },
               validate: (value) =>
-                value === getValues().password || "Passwords need to match",
+                value === getValues().password || 'Passwords need to match',
             })}
-          />{" "}
+          />{' '}
           {errors.passwordConfirm?.message && (
             <p className="text-red-500 text-xs mt-1">
               {errors.passwordConfirm.message}
@@ -141,7 +143,7 @@ function Signup() {
         <p className="text-sm font-semibold text-slate-500">
           You have an account?
           <Link to="/login" className="text-blue-600">
-            {" "}
+            {' '}
             Login now
           </Link>
         </p>
@@ -152,3 +154,4 @@ function Signup() {
 }
 
 export default Signup;
+

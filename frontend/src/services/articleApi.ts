@@ -10,7 +10,8 @@ export const getAllArticles = async (
     const headers = {
       authorization: `Bearer ${token}`,
     };
-    const searchString = searchQuery === '' ? '' : `&title=${searchQuery}`;
+
+    const searchString = searchQuery === '' ? '' : `&search=${searchQuery}`;
 
     const data = await axios(
       `${API_BASE_URL}/api/articles?page=${page}&limit=${RESULTS_PER_PAGE}` +
@@ -96,6 +97,7 @@ export const getMyArticles = async (token: string) => {
 
     return data.data.data;
   } catch (error) {
-  handleError(error);}
+    handleError(error);
+  }
 };
 

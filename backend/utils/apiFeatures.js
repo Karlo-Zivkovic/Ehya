@@ -5,14 +5,25 @@ class APIFeauters {
   }
 
   filter() {
+
     const queryObj = { ...this.queryString };
     const excludedFields = ['limit', 'page', 'sort', 'fields'];
     excludedFields.forEach((el) => delete queryObj[el]);
+
     let queryString = JSON.stringify(queryObj);
     queryString = queryString.replace(
       /\b(gte|gt|lte|lt)\b/g,
       (match) => `$${match}`,
     );
+
+    if (this.queryString.search) {
+      const searchTerm = this.queryString.search.toLowerCase();
+      const regex = new RegExp(searchTerm, 'i');
+
+      this.query = this.query.find({ title: { $regex: regex } });
+      return this;
+    }
+
     this.query = this.query.find(JSON.parse(queryString));
 
     return this;

@@ -11,6 +11,7 @@ function SearchArticle({ setSearchQuery }: SearchArticleProps) {
     handleSubmit,
     formState: { errors },
   } = useForm<{ searchQuery: string }>();
+
   const onSubmit: SubmitHandler<{ searchQuery: string }> = (formData) =>
     setSearchQuery(formData.searchQuery);
 

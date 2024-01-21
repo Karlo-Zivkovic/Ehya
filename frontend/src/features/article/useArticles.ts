@@ -15,13 +15,13 @@ export default function useArticles(searchQuery: string) {
     error: articleError,
     refetch,
   } = useQuery({
-    queryKey: ['articles'],
+    queryKey: ['articles', searchQuery],
     queryFn: () => getAllArticles(token, page, searchQuery),
   });
 
   useEffect(() => {
     refetch();
-  }, [page, refetch,searchQuery]);
+  }, [page, refetch, searchQuery]);
 
   return { data, isLoadingArticles, articleError };
 }

@@ -6,6 +6,7 @@ const upload = require('../utils/multer.js');
 
 exports.getAllArticles = catchAsync(async (req, res) => {
   const totalCount = await Article.getTotalCount();
+
   const features = new APIFeatures(Article.find(), req.query)
     .filter()
     .paginate();

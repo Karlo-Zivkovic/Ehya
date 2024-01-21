@@ -93,7 +93,6 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
 
   const resetURL = `${process.env.FRONTEND_URL}/resetPassword/${resetToken}`;
 
-  console.log(process.env.NODE_ENV);
 
   const email = new Email(user);
   const htmlMessage = `
