@@ -15,7 +15,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: 'https://65ad9ab9fe2cc0ba8d15a8e6--spiffy-nougat-9519f9.netlify.app',
+    origin: 'https://ehya-org.netlify.app',
     credentials: true,
   }),
 );
