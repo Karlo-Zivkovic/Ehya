@@ -15,7 +15,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ['http://localhost:5173','https://ehya-jglq.onrender.com'],
+    origin:'https://ehya-jglq.onrender.com', 
     credentials: true,
   }),
 );
