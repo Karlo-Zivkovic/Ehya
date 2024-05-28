@@ -15,7 +15,12 @@ Blogg app. Built the backend for it in node.js. And frontend is in react.
 - <b>React router</b>
 - <b>React icons</b>
 
-Project is deployed. Use email: karlo.zivkovic2@gmail.com, password: Berlin123
+<h2>DEPLOYED:</h2>
+
+- <b>https://ehya-org.netlify.app</b> 
+- <b>email: karlo.zivkovic2@gmail.com</b>
+- <b>pass: Berlin123</b>
+ 
 Or create a new account and check it out
 
 <h2>Project screenshot</h2>
